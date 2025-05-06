@@ -116,7 +116,7 @@ body {
   min-height: 60px;
   font-family: monospace;
   font-weight: 600;
-  font-size: 35px;
+  font-size: 30px;
   color: white;
   background-color: hsl(0, 0%, 30%);
   border: none;
@@ -141,7 +141,7 @@ body {
   min-height: 60px;
   font-family: monospace;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
   color: white;
   background-color: hsl(0, 0%, 30%);
