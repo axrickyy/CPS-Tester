@@ -27,8 +27,8 @@ function countdown(timeLeft) {
     cps = score / (timeLimit - timeLeft);
     cps = Math.round(cps * 10) / 10;
 
-    timerDisplay.textContent = timeLeft;
-    cpsDisplay.textContent = cps;
+    timerDisplay.innerHTML = timeLeft;
+    cpsDisplay.innerHTML = cps;
   }, 1000);
 }
 
@@ -40,7 +40,7 @@ function start() {
 
   reset();
   setTimeButtonState(false);
-  clicker.textContent = "CLICK!!!";
+  clicker.innerHTML = "CLICK!!!";
   clicker.style.fontStyle = "italic";
   countdown(timeLeft);
 }
@@ -48,13 +48,13 @@ function start() {
 clicker.addEventListener("click", () => {
   if (running == false) return;
   score++;
-  scoreDisplay.textContent = score;
+  scoreDisplay.innerHTML = score;
 });
 
 for (let i = 0; i < timeSetters.length; i++) {
   timeSetters[i].addEventListener("click", () => {
-    timeLimit = parseInt(timeSetters[i].textContent.split(" ")[0]);
-    timerDisplay.textContent = timeLimit;
+    timeLimit = parseInt(timeSetters[i].innerHTML.split(" ")[0]);
+    timerDisplay.innerHTML = timeLimit;
 
     timeSetters.forEach((button) => {
       button.classList.remove("active");
@@ -67,9 +67,16 @@ function displayResults() {
   clicker.disabled = true;
   resetButton.disabled = false;
   setTimeButtonState(true);
+
   cps = Math.round((score / timeLimit) * 10) / 10;
-  cpsDisplay.textContent = cps;
-  clicker.textContent = `You Clicked At ${cps} Clicks Per Second!`;
+  cpsDisplay.innerHTML = cps;
+  if (cps <= 4)
+    clicker.innerHTML = `${cps} Clicks Per Second <br>Your clicks need a boost!`;
+  else if (cps > 4 && cps <= 9)
+    clicker.innerHTML = `${cps} Clicks Per Second <br>You're Getting There!`;
+  else if (cps > 9)
+    clicker.innerHTML = `${cps} Clicks Per Second <br>Smashing It Like A Pro!`;
+
   clicker.classList.add("result");
   resetButton.classList.add("active");
 }
@@ -83,11 +90,11 @@ function reset() {
 
   score = 0;
   cps = 0;
-  timerDisplay.textContent = timeLimit;
-  scoreDisplay.textContent = score;
-  cpsDisplay.textContent = cps;
+  timerDisplay.innerHTML = timeLimit;
+  scoreDisplay.innerHTML = score;
+  cpsDisplay.innerHTML = cps;
 
-  clicker.textContent = "CLICK HERE TO START";
+  clicker.innerHTML = "CLICK HERE TO START";
 }
 
 function setTimeButtonState(enabled) {
