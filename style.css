@@ -80,6 +80,10 @@ body {
   background-color: hsl(0, 0%, 5%);
 }
 
+#clicker:active {
+  background-color: hsl(0, 0%, 7.5%);
+}
+
 #clicker.result {
   font-size: 50px;
   font-style: italic;
