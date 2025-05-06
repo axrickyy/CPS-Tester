@@ -72,6 +72,8 @@ body {
   border-radius: 50px;
   color: hsl(0, 0%, 85%);
   font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
   cursor: pointer;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.75s;
 }
