@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPS Tester</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="header">CPS TESTER</div>
+
+    <div id="main-container">
+      <div id="timer-box" class="info-box">
+        <span id="timer-display">5</span>
+        <span id="timer-label">TIMER</span>
+      </div>
+      <div id="cps-box" class="info-box">
+        <span id="cps-display">0</span>
+        <span id="cps-label">Clicks/s</span>
+      </div>
+      <div id="score-box" class="info-box">
+        <span id="score-display">0</span>
+        <span id="score-label">SCORE</span>
+      </div>
+      <button type="button" id="clicker" onclick="start()">
+        CLICK HERE TO START
+      </button>
+    </div>
+
+    <div id="right-panel">
+      <label>SELECT TIME</label>
+      <button type="button" class="time-setters">5 SECONDS</button>
+      <button type="button" class="time-setters">10 SECONDS</button>
+      <button type="button" class="time-setters">15 SECONDS</button>
+      <button type="button" class="time-setters">30 SECONDS</button>
+      <button type="button" class="time-setters">60 SECONDS</button>
+      <button type="button" id="reset-button" onclick="reset()">RESET</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
