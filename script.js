@@ -69,7 +69,7 @@ function displayResults() {
   setTimeButtonState(true);
   cps = Math.round((score / timeLimit) * 10) / 10;
   cpsDisplay.textContent = cps;
-  clicker.textContent = "You Clicked At " + cps + " Clicks Per Second!";
+  clicker.textContent = `You Clicked At ${cps} Clicks Per Second!`;
   clicker.classList.add("result");
   resetButton.classList.add("active");
 }
